@@ -1,0 +1,73 @@
+body {
+  background-image: url("https://fotomenapamplonadotcom.files.wordpress.com/2016/02/fondo-web2.jpg");
+}
+.clubs,
+.positions {
+  width: 45%;
+  padding: 2em;
+  text-align: center;
+}
+.navigator {
+  display: flex;
+}
+.teams,
+.position {
+  padding: 1em;
+  margin: 1em;
+  width: 100%;
+}
+.form{
+    background-color: antiquewhite;
+    width: 13%;
+    margin: auto;
+    padding: 2em;
+}
+h1{
+    text-align: center;
+}
+.buttonDelete{
+    width: 14.25em;
+    height: 3em;
+    margin-top: 1em;
+    background-color: red;
+}
+.buttonForm{
+    width: 7em;
+    height: 2.5em;
+    background-color: cornsilk;
+}
+input,select{
+    margin: 1em;
+    background-color: wheat;
+    border-radius: 0.5em;
+}
+a {
+  padding: 1em;
+  text-decoration: none;
+    color: unset;
+}
+.player{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.escudo{
+    width: 11em;
+    margin-left: 19em;
+    margin-top: -3em;
+}
+.escudo2{
+    width: 7em;
+    padding-left: 2.5em;
+    padding-bottom: 1em;
+}
+.tittle{
+    display: flex;
+}
+.button{
+    background-color: #ada99f;
+    border-radius: 2em;
+    font-size: 1.5em;
+    margin-left: 4em;
+    text-decoration: none;
+    color: aliceblue;
+}
