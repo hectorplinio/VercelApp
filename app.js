@@ -22,7 +22,7 @@ async function fetchProducts() {
         //console.log(data);
         const ul = document.getElementById('players');
         let players = data;
-        //console.log(products);
+        console.log(players);
         
         for(let player of players){
             let li = createNode('li');
