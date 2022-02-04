@@ -29,7 +29,7 @@ async function fetchProducts() {
             let span = createNode('span');           
             span.innerHTML += `${player.name} ${player.age} ${player.position}`;   
             span.innerHTML += <a href="/players/+`${player._id}`+"></a>;
-            span.innerHTML += <p><b>Name:</b> `${player.name}` </p>
+            span.innerHTML += <p><b>Name:</b> {player.name} </p>;
 
 
             append(li, span);
