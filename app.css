@@ -46,10 +46,7 @@ a {
   text-decoration: none;
     color: unset;
 }
-.player{
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-}
+
 .players{
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
