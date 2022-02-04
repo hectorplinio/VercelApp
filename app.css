@@ -46,7 +46,7 @@ a {
   text-decoration: none;
     color: unset;
 }
-.players{
+.player{
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
 }
