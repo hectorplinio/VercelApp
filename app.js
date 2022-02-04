@@ -22,15 +22,14 @@ async function fetchProducts() {
         //console.log(data);
         const ul = document.getElementById('players');
         let players = data;
+        console.log(players);
         
         for(let player of players){
-            console.log(player)
             let li = createNode('li');
             let span = createNode('span');           
-            span.innerHTML += `<a href='/players/`+player['_id']`+'>`; 
-            span.innerHTML += `<p><b>Name:</b> `+player['name']`+ </p>`; 
-            span.innerHTML += `<p><b>Age:</b> `+player['age']`+ </p>`; 
-            span.innerHTML += `<p><b>POS:</b> `+player['position']`+ </p>`; 
+            span.innerHTML += `${player.name} ${player.age} ${player.position}`;   
+            span.innerHTML += "<a href='/players/<%= player.id'>"; 
+            span.innerHTML += `<p><b>Name:</b> `+player.name`+ </p>`; 
 
             append(li, span);
             append(ul, li);
