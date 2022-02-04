@@ -39,15 +39,13 @@ async function fetchProducts() {
             }else if(player.team == "BORUSSIA DORTMUND") {
               team = "<p><b>Team:</b>"+ player.team+ "</p><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/640px-Borussia_Dortmund_logo.svg.png' class='escudo'>";
             }
-            li.innerHTML += "<a href='/edit/"+player._id+"'>";
+            span.innerHTML += "<a href='/edit/"+player._id+"'>EDIT PLAYER</a>";
             span.innerHTML += "<div class='player'>";
             span.innerHTML += "<p><b>Name:</b>"+ player.name +"</p>";
             span.innerHTML += "<p><b>Age:</b>"+ player.age +"</p>";
             span.innerHTML += "<p><b>POS:</b>"+ player.position +"</p>";
             span.innerHTML += "<p><b>POS:</b>"+ player.position +"</p>";
             span.innerHTML += team;
-            li.innerHTML += "</a>";
-
 
             append(li, span);
             append(ul, li);
