@@ -24,10 +24,10 @@ async function fetchProducts() {
         let players = data;
         
         for(let player of players){
-          console.log(player)
+            console.log(player)
             let li = createNode('li');
             let span = createNode('span');           
-            span.innerHTML += "<a href='/players/<%= player.id'>"; 
+            span.innerHTML += `<a href='/players/`+player['id']`+'>`; 
             span.innerHTML += `<p><b>Name:</b> `+player['name']`+ </p>`; 
             span.innerHTML += `<p><b>Age:</b> `+player['age']`+ </p>`; 
             span.innerHTML += `<p><b>POS:</b> `+player['position']`+ </p>`; 
