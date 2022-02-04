@@ -26,12 +26,20 @@ async function fetchProducts() {
         
         for(let player of players){
             let li = createNode('li');
-            let span = createNode('span');           
-            span.innerHTML += `${player.name} ${player.age} ${player.position}`;   
+            let span = createNode('span');
+            let team= "";  
+            if(player.team == "PSG"){ 
+              team = "<p><b>Team:</b>"+ player.team+ "</p><img src='https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Paris_Saint-Germain_F.C..svg/1200px-Paris_Saint-Germain_F.C..svg.png' class='escudo'>";
+            }else if(player.team == "REAL MADRID") {
+              team = "<p><b>Team:</b>"+ player.team+ "</p><img src='https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/640px-Real_Madrid_CF.svg.png' class='escudo'>";
+            }
+              span.innerHTML += `${player.name} ${player.age} ${player.position}`;   
             span.innerHTML += "<div class='player'>";
             span.innerHTML += "<p><b>Name:</b>"+ player.name +"</p>";
             span.innerHTML += "<p><b>Age:</b>"+ player.age +"</p>";
             span.innerHTML += "<p><b>POS:</b>"+ player.position +"</p>";
+            span.innerHTML += "<p><b>POS:</b>"+ player.position +"</p>";
+            span.innerHTML += team;
 
 
             append(li, span);
