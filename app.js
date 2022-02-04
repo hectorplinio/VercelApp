@@ -32,6 +32,12 @@ async function fetchProducts() {
               team = "<p><b>Team:</b>"+ player.team+ "</p><img src='https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Paris_Saint-Germain_F.C..svg/1200px-Paris_Saint-Germain_F.C..svg.png' class='escudo'>";
             }else if(player.team == "REAL MADRID") {
               team = "<p><b>Team:</b>"+ player.team+ "</p><img src='https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/640px-Real_Madrid_CF.svg.png' class='escudo'>";
+            }else if(player.team == "FC BARCELONA") {
+              team = "<p><b>Team:</b>"+ player.team+ "</p><img src='https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png' class='escudo'>";
+            }else if(player.team == "BAYERN MUNICH") {
+              team = "<p><b>Team:</b>"+ player.team+ "</p><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/1200px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png' class='escudo'>";
+            }else if(player.team == "BORUSSIA DORTMUND") {
+              team = "<p><b>Team:</b>"+ player.team+ "</p><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/640px-Borussia_Dortmund_logo.svg.png' class='escudo'>";
             }
               span.innerHTML += `${player.name} ${player.age} ${player.position}`;   
             span.innerHTML += "<div class='player'>";
