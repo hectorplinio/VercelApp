@@ -27,7 +27,7 @@ async function fetchProducts() {
         for(let player of players){
             let li = createNode('li');
             let span = createNode('span');           
-            span.innerHTML = `${player.name} ${player.age} ${player.position}`;            
+            span.innerHTML += `${player.name} ${player.age} ${player.position}`;            
             append(li, span);
             append(ul, li);
         }
