@@ -54,4 +54,41 @@ async function fetchProducts() {
       })
       .catch((error) => console.log(error));
   }
+  async function fetchEditProducts() {
+    const response = await fetch(
+      "https://vercel-app-futbol.herokuapp.com/players",
+      {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        //console.log(data);
+        const ul = document.getElementById('form');
+        let players = data;
+        console.log(players);
+        
+        for(let player of players){
+            let li = createNode('li');
+            let span = createNode('span');
+            let team= "";
+            span.innerHTML += "<a href='/edit.html/?q="+player._id+"'>EDIT PLAYER</a>";
+            span.innerHTML += "<div class='player'>";
+            span.innerHTML += "<p><b>Name:</b>"+ player.name +"</p>";
+            span.innerHTML += "<p><b>Age:</b>"+ player.age +"</p>";
+            span.innerHTML += "<p><b>POS:</b>"+ player.position +"</p>";
+            span.innerHTML += "<p><b>POS:</b>"+ player.position +"</p>";
+            span.innerHTML += team;
+
+            append(li, span);
+            append(ul, li);
+        }
+        
+      })
+      .catch((error) => console.log(error));
+  }
 
