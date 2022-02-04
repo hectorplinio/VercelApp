@@ -22,9 +22,9 @@ async function fetchProducts() {
         //console.log(data);
         const ul = document.getElementById('players');
         let players = data;
-        console.log(players);
         
         for(let player of players){
+          console.log(player)
             let li = createNode('li');
             let span = createNode('span');           
             span.innerHTML += "<a href='/players/<%= player.id'>"; 
