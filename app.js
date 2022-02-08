@@ -8,13 +8,14 @@ function append(parent, el) {
 
 async function fetchProducts() {
     const response = await fetch(
-      "https://vercel-app-futbol.herokuapp.com/players",
+      "https://new-vercel.herokuapp.com/players",
       {
         method: "GET",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json"
         },
+
       }
     )
       .then((res) => res.json())
@@ -56,7 +57,7 @@ async function fetchProducts() {
   }
   async function fetchEditProducts() {
     const response = await fetch(
-      "https://vercel-app-futbol.herokuapp.com/players",
+      "https://new-vercel.herokuapp.com/players",
       {
         method: "GET",
         headers: {

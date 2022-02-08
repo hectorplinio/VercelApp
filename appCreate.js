@@ -45,10 +45,9 @@ async function fetchCreateProduct() {
     position: position,
     team: team,
   };
-  debugger;
 
   const response = await fetch(
-    "https://vercel-app-futbol.herokuapp.com/players",
+    "https://new-vercel.herokuapp.com/players",
     {
       method: "POST",
       headers: {
@@ -62,6 +61,9 @@ async function fetchCreateProduct() {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
+      const span = document.getElementById("productSpan");
+      let product = data;
+      span.innerHTML = `${product._id} ${product.name} ${product.price} ${product.category}`;
     })
     .catch((error) => console.log(error));
 }
