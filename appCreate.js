@@ -46,7 +46,8 @@ async function fetchCreateProduct() {
           Accept: "application/json",
           "Content-Type": "application/json"
         },
-		body: JSON.stringify(newPlayer)
+		body: JSON.stringify(newPlayer),
+    mode:"no-cors"
       }
     )
       .then((res) => res.json())
