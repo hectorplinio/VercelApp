@@ -14,9 +14,7 @@ async function fetchEditProducts(id) {
       .then((data) => {
         //console.log(data);
         const ul = document.getElementById('form');
-        let player = data;
-        console.log(player);
-        
+        let player = data;        
         try {
 		 
           document.getElementById("id").value = id;
@@ -44,7 +42,6 @@ async function fetchEditProducts(id) {
     
       name = name.replace(/[\[\]]/g, '\\$&');
     
-    console.log(name);
       var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
           results = regex.exec(url);
       if (!results) return null;
@@ -58,7 +55,6 @@ async function fetchEditProducts(id) {
     const ageField = document.getElementById("age").value;
     const positionField = document.getElementById("position").value;
     const teamField = document.getElementById("team").value;
-    console.log(idField +" " +nameField + " " + surnameField + " " + ageField + " " + positionField + " " + teamField);
   
     const newPlayer = {
       name: nameField,

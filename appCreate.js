@@ -1,5 +1,3 @@
-const btnNew = document.getElementById("btnNew");
-btnNew.addEventListener("click", fetchCreateProduct);
 
 async function fetchCreateProduct() {
   const name = document.getElementById("name").value;
@@ -7,7 +5,6 @@ async function fetchCreateProduct() {
   const age = document.getElementById("age").value;
   const position = document.getElementById("position").value;
   const team = document.getElementById("team").value;
-  console.log(name + " " + surname + " " + age + " " + position + " " + team);
 
   const newPlayer = {
     name: name,
@@ -27,7 +24,6 @@ async function fetchCreateProduct() {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       alert("Player created succesfully");
       window.location.href = "index.html";
     })

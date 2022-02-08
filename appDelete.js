@@ -27,7 +27,6 @@ async function fetchDeleteProduct() {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         alert("Product Deleted");
         window.location.href = "index.html";
       })

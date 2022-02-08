@@ -6,8 +6,6 @@ function append(parent, el) {
   return parent.appendChild(el);
 }
 
-const btnDelete = document.getElementById("btnDelete");
-btnDelete.addEventListener("click",fetchDeleteProduct);
 
 async function fetchProducts() {
     const response = await fetch(
@@ -45,7 +43,7 @@ async function fetchProducts() {
               team = "<p><b>Team:</b>"+ player.team+ "</p><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/640px-Borussia_Dortmund_logo.svg.png' class='escudo'>";
             }
             a.setAttribute('href', "edit.html?id=" + player._id);
-            a.innerText = player._id;	
+            a.innerText = "Edit player";	
             span.innerHTML += "<div class='player'>";
             span.innerHTML += "<p><b>Name:</b>"+ player.name +"</p>";
             span.innerHTML += "<p><b>Age:</b>"+ player.age +"</p>";
@@ -53,8 +51,8 @@ async function fetchProducts() {
             span.innerHTML += "<p><b>POS:</b>"+ player.position +"</p>";
             span.innerHTML += team;
 
-            append(li, span);
             append(li, a);
+            append(li, span);
             append(ul, li);
         }
         
