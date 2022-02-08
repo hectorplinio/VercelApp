@@ -1,4 +1,4 @@
-function getMonth() {
+function getPositions() {
   let positions = ["GK", "DF", "MF", "FW", "CH"];
   let team = [
     "REAL MADRID",
