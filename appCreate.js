@@ -1,35 +1,6 @@
 const btnNew = document.getElementById("btnNew");
 btnNew.addEventListener("click", fetchCreateProduct);
 
-function getPositions() {
-  let positions = ["GK", "DF", "MF", "FW", "CH"];
-  let teams = [
-    "REAL MADRID",
-    "FC BARCELONA",
-    "PSG",
-    "BAYERN MUNICH",
-    "BORUSSIA DORTMUND",
-  ];
-  var optionPos = "";
-  optionPos = "";
-  var optionTeam = "";
-  optionTeam = "";
-
-  for (let i = 0; i < positions.length; i++) {
-    optionPos +=
-      "<option value='" +
-      positions[i] +
-      "' id='position'>" +
-      positions[i] +
-      "</option>";
-  }
-  for (let x = 0; x < teams.length; x++) {
-    optionTeam +=
-      "<option value='" + teams[x] + "' id='team'>" + teams[x] + "</option>";
-  }
-  document.getElementById("position").innerHTML = optionPos;
-  document.getElementById("team").innerHTML = optionTeam;
-}
 async function fetchCreateProduct() {
   const name = document.getElementById("name").value;
   const surname = document.getElementById("surname").value;
@@ -46,24 +17,18 @@ async function fetchCreateProduct() {
     team: team,
   };
 
-  const response = await fetch(
-    "https://new-vercel.herokuapp.com/players",
-    {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newPlayer),
-      mode: "no-cors",
-    }
-  )
+  const response = await fetch("https://new-vercel.herokuapp.com/players", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newPlayer),
+    mode: "no-cors"
+  })
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      const span = document.getElementById("productSpan");
-      let product = data;
-      span.innerHTML = `${product._id} ${product.name} ${product.price} ${product.category}`;
     })
     .catch((error) => console.log(error));
 }
