@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    ç<link rel="stylesheet" href="/app.css">
-    <link rel="shortcut icon" href="./favicon.png">
+    ç<link rel="stylesheet" href="app.css">
+    <script src="./app.js"></script>
+    <script src="./options.js"></script>
+    <link rel="shortcut icon" href="favicon.png">
     <title>Edit Player</title>
 </head>
-<body onload="fetchEditProducts()">
+<body onload="fetchEditProducts(getParameterByName('id'))">
     <div class="navigator">
         <div class="clubs">
             <H1>SELECT TEAM YOU WANT TO SEE</H1>
@@ -34,28 +36,15 @@
     </div>
     <h1>Edit Player</h1>
     <div class="form">
-        <form action="/players/<%= player.id%>?_method=PUT" method="POST">
-            <input type="text" name="name" placeholder="name" value=" <%= player.name %>"> <br>
-            <input type="text" name="surname" placeholder="surname" value=" <%= player.surname %>"> <br>
-            <input type="text" name="age" placeholder="age" value=" <%= player.age %>"> <br>
-            <select name="position">
-                <% for (let pos of positions) { %>
-                 <option value="<%=pos%>"
-                    <%= player.position === pos ? 'selected' : '' %>
-                    ><%=pos.toUpperCase()%></option>
-                <% } %>
-             </select><br>
-             <select name="team">
-                <% for (let tea of team) { %>
-                 <<option value="<%=tea%>"<%= player.team === tea ? 'selected' : '' %>
-                    ><%=tea.toUpperCase()%></option>
-                <% } %>
-             </select>
-                    
-            </select>
-            <button class="buttonForm">Save</button>
-            <button class="buttonForm"><a href="/players/<%= player.id %>">Cancel</a></button>
-        </form>
+        <input type="text" id="id" disabled style="display: none;">
+        <input type="text" name="name" placeholder="name" id="name"> <br>
+            <input type="text" name="surname" placeholder="surname" id="surname"> <br>
+            <input type="text" name="age" placeholder="age" min="16" id="age"> <br>
+            <input type="text" name="position" placeholder="position"  id="position"> <br>
+            <input type="text" name="team" placeholder="team"  id="team"> <br>
+
+            <input type="button" class="buttonForm" id="btnNew" value="Save"></button>
+            <button class="buttonForm"><a href="index.html" onclick="window.back()">Cancel</a></button>
         
     </div>
     

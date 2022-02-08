@@ -24,7 +24,7 @@ async function fetchCreateProduct() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(newPlayer),
-    mode: "no-cors"
+    mode: "no-cors",
   })
     .then((res) => res.json())
     .then((data) => {

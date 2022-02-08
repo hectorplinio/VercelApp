@@ -27,6 +27,8 @@ async function fetchProducts() {
         for(let player of players){
             let li = createNode('li');
             let span = createNode('span');
+            let a = createNode('a');
+
             let team= "";  
             if(player.team == "PSG"){ 
               team = "<p><b>Team:</b>"+ player.team+ "</p><img src='https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Paris_Saint-Germain_F.C..svg/1200px-Paris_Saint-Germain_F.C..svg.png' class='escudo'>";
@@ -39,7 +41,8 @@ async function fetchProducts() {
             }else if(player.team == "BORUSSIA DORTMUND") {
               team = "<p><b>Team:</b>"+ player.team+ "</p><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/640px-Borussia_Dortmund_logo.svg.png' class='escudo'>";
             }
-            span.innerHTML += "<a href='/edit.html/?q="+player._id+"'>EDIT PLAYER</a>";
+            a.setAttribute('href', "edit.html?id=" + player._id);
+            a.innerText = player._id;	
             span.innerHTML += "<div class='player'>";
             span.innerHTML += "<p><b>Name:</b>"+ player.name +"</p>";
             span.innerHTML += "<p><b>Age:</b>"+ player.age +"</p>";
@@ -48,15 +51,16 @@ async function fetchProducts() {
             span.innerHTML += team;
 
             append(li, span);
+            append(li, a);
             append(ul, li);
         }
         
       })
       .catch((error) => console.log(error));
   }
-  async function fetchEditProducts() {
+  async function fetchEditProducts(id) {
     const response = await fetch(
-      "https://new-vercel.herokuapp.com/players",
+      "https://new-vercel.herokuapp.com/players/"+id,
       {
         method: "GET",
         headers: {
@@ -69,26 +73,40 @@ async function fetchProducts() {
       .then((data) => {
         //console.log(data);
         const ul = document.getElementById('form');
-        let players = data;
-        console.log(players);
+        let player = data;
+        console.log(player);
         
-        for(let player of players){
-            let li = createNode('li');
-            let span = createNode('span');
-            let team= "";
-            span.innerHTML += "<a href='/edit.html/?q="+player._id+"'>EDIT PLAYER</a>";
-            span.innerHTML += "<div class='player'>";
-            span.innerHTML += "<p><b>Name:</b>"+ player.name +"</p>";
-            span.innerHTML += "<p><b>Age:</b>"+ player.age +"</p>";
-            span.innerHTML += "<p><b>POS:</b>"+ player.position +"</p>";
-            span.innerHTML += "<p><b>POS:</b>"+ player.position +"</p>";
-            span.innerHTML += team;
+        try {
+		 
+          document.getElementById("id").value = id;
+          
+          if (player != null){
+           document.getElementById("name").value = player.name;      
+           document.getElementById("surname").value = player.surname; 
+           document.getElementById("age").value = player.age;      
+           document.getElementById("position").value = player.position;
+           document.getElementById("team").value = player.team;
 
-            append(li, span);
-            append(ul, li);
-        }
+          }
+         
+       }
+       catch (e) {
+          // sentencias para manejar cualquier excepción
+          console.log(e); // pasa el objeto de la excepción al manejador de errores
+       }
         
       })
       .catch((error) => console.log(error));
   }
-
+  function getParameterByName(name, url = window.location.href) {
+    console.log(url);
+    
+      name = name.replace(/[\[\]]/g, '\\$&');
+    
+    console.log(name);
+      var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+          results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, ' '));
+  }
