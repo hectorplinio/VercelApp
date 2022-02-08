@@ -60,3 +60,4 @@ async function fetchProducts() {
       .catch((error) => console.log(error));
   }
   
+  
