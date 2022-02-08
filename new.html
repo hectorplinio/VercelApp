@@ -34,14 +34,11 @@
     </div>
     <h1 >New player</h1>
     <div class="form">
-        <form action="/players" method="POST">
-            <input type="text" name="name" placeholder="name"> <br>
-            <input type="text" name="surname" placeholder="surname"> <br>
-            <input type="text" name="age" placeholder="age" min="16"> <br>
-            <select name="position">
-                <% for (let pos of positions) { %>
-                 <option value="<%=pos%>"><%=pos%></option>
-                <% } %>
+            <input type="text" name="name" placeholder="name" id="name"> <br>
+            <input type="text" name="surname" placeholder="surname" id="surname"> <br>
+            <input type="text" name="age" placeholder="age" min="16" id="age"> <br>
+            <select name="position" id="position">
+                
              </select><br>
              <select name="team">
                 <% for (let tea of team) { %>
@@ -49,8 +46,7 @@
                 <% } %>
              </select>
             <button class="buttonForm">Create</button>
-            <button class="buttonForm"><a href="/players">Cancel</a></button>
-        </form>
+            <button class="buttonForm"><a href="/">Cancel</a></button>
         
     </div>
     
