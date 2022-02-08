@@ -6,6 +6,9 @@ function append(parent, el) {
   return parent.appendChild(el);
 }
 
+const btnDelete = document.getElementById("btnDelete");
+btnDelete.addEventListener("click",fetchDeleteProduct);
+
 async function fetchProducts() {
     const response = await fetch(
       "https://new-vercel.herokuapp.com/players",
@@ -58,55 +61,4 @@ async function fetchProducts() {
       })
       .catch((error) => console.log(error));
   }
-  async function fetchEditProducts(id) {
-    const response = await fetch(
-      "https://new-vercel.herokuapp.com/players/"+id,
-      {
-        method: "GET",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json"
-        },
-      }
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        //console.log(data);
-        const ul = document.getElementById('form');
-        let player = data;
-        console.log(player);
-        
-        try {
-		 
-          document.getElementById("id").value = id;
-          
-          if (player != null){
-           document.getElementById("name").value = player.name;      
-           document.getElementById("surname").value = player.surname; 
-           document.getElementById("age").value = player.age;      
-           document.getElementById("position").value = player.position;
-           document.getElementById("team").value = player.team;
-
-          }
-         
-       }
-       catch (e) {
-          // sentencias para manejar cualquier excepción
-          console.log(e); // pasa el objeto de la excepción al manejador de errores
-       }
-        
-      })
-      .catch((error) => console.log(error));
-  }
-  function getParameterByName(name, url = window.location.href) {
-    console.log(url);
-    
-      name = name.replace(/[\[\]]/g, '\\$&');
-    
-    console.log(name);
-      var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-          results = regex.exec(url);
-      if (!results) return null;
-      if (!results[2]) return '';
-      return decodeURIComponent(results[2].replace(/\+/g, ' '));
-  }
+  

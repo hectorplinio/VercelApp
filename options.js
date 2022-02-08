@@ -13,12 +13,7 @@ function getPositions() {
     optionTeam = "";
   
     for (let i = 0; i < positions.length; i++) {
-      optionPos +=
-        "<option value='" +
-        positions[i] +
-        "' id='position'>" +
-        positions[i] +
-        "</option>";
+      optionPos +="<option value='" +positions[i] +"' id='position'>" +positions[i] + "</option>";
     }
     for (let x = 0; x < teams.length; x++) {
       optionTeam +=

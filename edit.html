@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     ç<link rel="stylesheet" href="app.css">
-    <script src="./app.js"></script>
+    <script src="./appShow.js"></script>
+    <script src="./appDelete.js"></script>
     <script src="./options.js"></script>
     <link rel="shortcut icon" href="favicon.png">
     <title>Edit Player</title>
@@ -43,7 +44,8 @@
             <input type="text" name="position" placeholder="position"  id="position"> <br>
             <input type="text" name="team" placeholder="team"  id="team"> <br>
 
-            <input type="button" class="buttonForm" id="btnNew" value="Save"></button>
+            <input type="button" class="buttonForm" id="btnEdit" onclick="fetchEditProduct()" value="Edit"></button> 
+            <input type="button" class="buttonForm" id="btnDelete" value="Delete" onclick="fetchDeleteProduct()"></button>
             <button class="buttonForm"><a href="index.html" onclick="window.back()">Cancel</a></button>
         
     </div>
