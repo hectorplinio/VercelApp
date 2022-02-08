@@ -38,12 +38,10 @@
             <input type="text" name="surname" placeholder="surname" id="surname"> <br>
             <input type="text" name="age" placeholder="age" min="16" id="age"> <br>
             <select name="position" id="position">
-                
+                <option>POS</option>
              </select><br>
-             <select name="team">
-                <% for (let tea of team) { %>
-                 <option value="<%=tea%>"><%=tea.toUpperCase()%></option>
-                <% } %>
+             <select name="team" id="team">
+                <option>TEAM</option>
              </select>
             <button class="buttonForm">Create</button>
             <button class="buttonForm"><a href="/">Cancel</a></button>

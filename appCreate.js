@@ -1,6 +1,6 @@
 function getPositions() {
   let positions = ["GK", "DF", "MF", "FW", "CH"];
-  let team = [
+  let teams = [
     "REAL MADRID",
     "FC BARCELONA",
     "PSG",
@@ -8,20 +8,20 @@ function getPositions() {
     "BORUSSIA DORTMUND",
   ];
   var optionPos = "";
-  optionPos = "<option>POS</option>";
+  optionPos = "";
   var optionTeam = "";
-  optionTeam = "<option>TEAM</option>";
+  optionTeam = "";
 
   for (let i = 0; i < positions.length; i++) {
-    let positions_number = i + 1;
-
-    let pos = positions_number <= 9 ? "0" + positions_number : positions_number;
-
     optionPos +=
-      '<option value="' +
-      pos + "id='position'>" +
-      pos[i] +
-      "</option>";
+      "<option value='"+positions[i]+"' id='position'>" +positions[i] +"</option>";
+
+  }
+  for (let x = 0; x< teams.length; x++) {
+    optionTeam +=
+      "<option value='"+teams[x]+"' id='team'>" +teams[x] +"</option>";
+
   }
   document.getElementById("position").innerHTML = optionPos;
+  document.getElementById("team").innerHTML = optionTeam;
 }
