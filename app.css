@@ -16,59 +16,64 @@ body {
   margin: 1em;
   width: 100%;
 }
-.form{
-    background-color: antiquewhite;
-    width: 13%;
-    margin: auto;
-    padding: 2em;
+.form {
+  background-color: antiquewhite;
+  width: 13%;
+  margin: auto;
+  padding: 2em;
 }
-h1{
-    text-align: center;
+h1 {
+  text-align: center;
 }
-.buttonDelete{
-    width: 14.25em;
-    height: 3em;
-    margin-top: 1em;
-    background-color: red;
+.buttonDelete {
+  width: 14.25em;
+  height: 3em;
+  margin-top: 1em;
+  background-color: red;
 }
-.buttonForm{
-    width: 7em;
-    height: 2.5em;
-    background-color: cornsilk;
+.buttonForm {
+  width: 7em;
+  height: 2.5em;
+  background-color: cornsilk;
 }
-input,select{
-    margin: 1em;
-    background-color: wheat;
-    border-radius: 0.5em;
+input,
+select {
+  margin: 1em;
+  background-color: wheat;
+  border-radius: 0.5em;
 }
 a {
   padding: 1em;
   text-decoration: none;
-    color: unset;
+  color: unset;
 }
 
-.players{
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+.players {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
-.escudo{
-    width: 11em;
-    margin-left: 19em;
-    margin-top: -3em;
+.escudo {
+  width: 11em;
+  margin-left: 19em;
+  margin-top: -3em;
 }
-.escudo2{
-    width: 7em;
-    padding-left: 2.5em;
-    padding-bottom: 1em;
+.escudo2 {
+  width: 7em;
+  padding-left: 2.5em;
+  padding-bottom: 1em;
 }
-.tittle{
-    display: flex;
+.tittle {
+  display: flex;
 }
-.button{
-    background-color: #ada99f;
-    border-radius: 2em;
-    font-size: 1.5em;
-    margin-left: 4em;
-    text-decoration: none;
-    color: aliceblue;
+.button {
+  background-color: #ada99f;
+  border-radius: 2em;
+  font-size: 1.5em;
+  margin-left: 4em;
+  text-decoration: none;
+  color: aliceblue;
+}
+.buttonEdit {
+  background-color: #b7b2a8;
+  border-radius: 1em;
 }

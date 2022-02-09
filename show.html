@@ -1,73 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/app.css">
-    <link rel="shortcut icon" href="./favicon.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/app.css" />
+    <link rel="shortcut icon" href="./favicon.png" />
     <title>Show Player</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="navigator">
-        <div class="clubs">
-            <H1>SELECT TEAM YOU WANT TO SEE</H1>
-            <div class="teams">
-                <a href="/players?team=PSG"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Paris_Saint-Germain_F.C..svg/1200px-Paris_Saint-Germain_F.C..svg.png"  style="width: 4em;"></a>
-                <a href="/players?team=REAL+MADRID"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/640px-Real_Madrid_CF.svg.png"  style="width: 4em;"></a>
-                <a href="/players?team=FC+BARCELONA"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png"  style="width: 4em;"></a>
-                <a href="/players?team=BAYERN+MUNICH"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/1200px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png"  style="width: 4em;"></a>
-                <a href="/players?team=BORUSSIA+DORTMUND"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/640px-Borussia_Dortmund_logo.svg.png"  style="width: 4em;"></a>
-            </div>
+      <div class="clubs">
+        <h1>SELECT TEAM YOU WANT TO SEE</h1>
+        <div class="teams">
+          <a href="/players?team=PSG"
+            ><img
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Paris_Saint-Germain_F.C..svg/1200px-Paris_Saint-Germain_F.C..svg.png"
+              style="width: 4em"
+          /></a>
+          <a href="/players?team=REAL+MADRID"
+            ><img
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/640px-Real_Madrid_CF.svg.png"
+              style="width: 4em"
+          /></a>
+          <a href="/players?team=FC+BARCELONA"
+            ><img
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png"
+              style="width: 4em"
+          /></a>
+          <a href="/players?team=BAYERN+MUNICH"
+            ><img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/1200px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png"
+              style="width: 4em"
+          /></a>
+          <a href="/players?team=BORUSSIA+DORTMUND"
+            ><img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/640px-Borussia_Dortmund_logo.svg.png"
+              style="width: 4em"
+          /></a>
         </div>
-        <div class="positions">
-            <H1>SELECT POSITION YOU WANT TO SEE</H1>
-            <div class="position">
-                <a href="/players?pos=GK"><img src="https://i.redd.it/b8aj7i0vwfz41.png"  style="width: 5.5em;"></a>
-                <a href="/players?pos=DF"><img src="https://fifadataba.com/images/cards/14.png"  style="width: 5em;"></a>
-                <a href="/players?pos=MF"><img src="https://cdn141.picsart.com/329696006057201.png"  style="width: 5.5em;"></a>
-                <a href="/players?pos=FW"><img src="https://www.fifauteam.com/wp-content/uploads/2020/03/A2010-Ronaldinho4.png"  style="width: 5em;"></a>
-                <a href="/players?pos=CH"><img src="https://www.fifauteam.com/wp-content/uploads/2020/03/A2010-Guardiola4.png"  style="width: 5em;"></a>
-            </div>
+      </div>
+      <div class="positions">
+        <h1>SELECT POSITION YOU WANT TO SEE</h1>
+        <div class="position">
+          <a href="/players?pos=GK"
+            ><img
+              src="https://i.redd.it/b8aj7i0vwfz41.png"
+              style="width: 5.5em"
+          /></a>
+          <a href="/players?pos=DF"
+            ><img
+              src="https://fifadataba.com/images/cards/14.png"
+              style="width: 5em"
+          /></a>
+          <a href="/players?pos=MF"
+            ><img
+              src="https://cdn141.picsart.com/329696006057201.png"
+              style="width: 5.5em"
+          /></a>
+          <a href="/players?pos=FW"
+            ><img
+              src="https://www.fifauteam.com/wp-content/uploads/2020/03/A2010-Ronaldinho4.png"
+              style="width: 5em"
+          /></a>
+          <a href="/players?pos=CH"
+            ><img
+              src="https://www.fifauteam.com/wp-content/uploads/2020/03/A2010-Guardiola4.png"
+              style="width: 5em"
+          /></a>
         </div>
-        
+      </div>
     </div>
     <h1>Player</h1>
     <div class="form">
-        <p><b>Player name:</b> <%= player.name %></p>
-        <p><b>Player surname:</b> <%= player.surname %></p>
-        <p><b>Player age:</b> <%= player.age %></p>
-        <p><b>Player position:</b> <%= player.position %></p>
-        <p><b>Player team:</b> <%= player.team %></p>
-        <p><b>Player id:</b> <%= player.id %></p>
-        <% if(player.team == "PSG"){ %>
-            <p><b>Team:</b> <%= player.team %></p>
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Paris_Saint-Germain_F.C..svg/1200px-Paris_Saint-Germain_F.C..svg.png"  class="escudo2">
-        <% } %>
-        <% if(player.team == "REAL MADRID"){ %>
-            <p><b>Team:</b> <%= player.team %></p>
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/640px-Real_Madrid_CF.svg.png"  class="escudo2">
-        <% } %>
-        <% if(player.team == "FC BARCELONA"){ %>
-            <p><b>Team:</b> <%= player.team %></p>
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png"  class="escudo2">
-        <% } %>
-        <% if(player.team == "BAYERN MUNICH"){ %>
-            <p><b>Team:</b> <%= player.team %></p>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/1200px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png"  class="escudo2">
-            <% } %>
-        <% if(player.team == "BORUSSIA DORTMUND"){ %>
-            <p><b>Team:</b> <%= player.team %></p>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/640px-Borussia_Dortmund_logo.svg.png"  class="escudo2">
-            <% } %>
-        <button class="buttonForm"> <a href="/players">Back</a></button>
-        <button class="buttonForm"><a href="/players/<%= player.id %>/edit">Edit</a></button>
-   
-    
-    <form method="POST" action="/players/<%= player._id%>?_method=DELETE">
+      <p><b>Player name:</b> <%= player.name %></p>
+      <p><b>Player surname:</b> <%= player.surname %></p>
+      <p><b>Player age:</b> <%= player.age %></p>
+      <p><b>Player position:</b> <%= player.position %></p>
+      <p><b>Player team:</b> <%= player.team %></p>
+      <p><b>Player id:</b> <%= player.id %></p>
+      <% if(player.team == "PSG"){ %>
+      <p><b>Team:</b> <%= player.team %></p>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Paris_Saint-Germain_F.C..svg/1200px-Paris_Saint-Germain_F.C..svg.png"
+        class="escudo2"
+      />
+      <% } %> <% if(player.team == "REAL MADRID"){ %>
+      <p><b>Team:</b> <%= player.team %></p>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/640px-Real_Madrid_CF.svg.png"
+        class="escudo2"
+      />
+      <% } %> <% if(player.team == "FC BARCELONA"){ %>
+      <p><b>Team:</b> <%= player.team %></p>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png"
+        class="escudo2"
+      />
+      <% } %> <% if(player.team == "BAYERN MUNICH"){ %>
+      <p><b>Team:</b> <%= player.team %></p>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/1200px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png"
+        class="escudo2"
+      />
+      <% } %> <% if(player.team == "BORUSSIA DORTMUND"){ %>
+      <p><b>Team:</b> <%= player.team %></p>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/640px-Borussia_Dortmund_logo.svg.png"
+        class="escudo2"
+      />
+      <% } %>
+      <button class="buttonForm"><a href="/players">Back</a></button>
+      <button class="buttonForm">
+        <a href="/players/<%= player.id %>/edit">Edit</a>
+      </button>
+
+      <form method="POST" action="/players/<%= player._id%>?_method=DELETE">
         <button class="buttonDelete">Delete</button>
-    </form>
+      </form>
     </div>
-     
-</body>
+  </body>
 </html>
